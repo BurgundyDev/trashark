@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is a general script for controlling Player movement and interaction.
+
 public class PlayerMovementBehaviour : MonoBehaviour
 {
 	public GameObject interactIcon;
@@ -22,7 +24,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 	public List<KeyCode> buttonDown;
 	public List<KeyCode> buttonLeft;
 	public List<KeyCode> buttonRight;
-    	// Move the player according to WASD buttons
+    	// Move the player according to assigned buttons
 	void PlayerMove()
 	{
 		Vector3 thisFrameMove = new Vector3();
@@ -69,7 +71,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 	{
 		interactIcon.SetActive(false);
 	}
-	//Check if player interacts with objects
+	//Check if player is able to interact with other objects.
 	private void CheckInteraction()
 	{
 		RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position,boxSize, 0, Vector2.zero);
