@@ -89,7 +89,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        interactIcon.SetActive(false);
+		interactIcon.SetActive(false);
     }
 
     // Update is called once per frame

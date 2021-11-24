@@ -25,4 +25,5 @@ public class changeSpriteUponInteraction : Interactable
         sr = GetComponent<SpriteRenderer>();
         sr.sprite = closed;
     }
+
 }
