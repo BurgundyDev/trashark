@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerMovementBehaviour : MonoBehaviour
 {
-	// Variables for layer's movement
+	public GameObject interactIcon;
+
+	private Vector2 boxSize = new Vector2(1f,1f);
+	// Variables for player's movement
 	// Default player's speed applied every time player
 	// generate any input signal (like keyboard press)
 	public float playerSpeedDefault = 6.0f;
@@ -57,15 +60,44 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
 		return Vector3.zero;
 	}
+	
+	public void OpenInteractableIcon()
+	{
+		interactIcon.SetActive(true);
+	}
+	public void CloseInteractableIcon()
+	{
+		interactIcon.SetActive(false);
+	}
+	//Check if player interacts with objects
+	private void CheckInteraction()
+	{
+		RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position,boxSize, 0, Vector2.zero);
+
+		if(hits.Length > 0)
+		{
+			foreach(RaycastHit2D rc in hits)
+			{
+				if(rc.transform.GetComponent<Interactable>())
+				{
+					rc.transform.GetComponent<Interactable>().Interact();
+					return;
+				}
+			}
+		}
+	}
     // Start is called before the first frame update
     void Start()
     {
-        
+        interactIcon.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMove();
+
+		if(Input.GetKeyDown(KeyCode.E))
+			CheckInteraction();
     }
 }
