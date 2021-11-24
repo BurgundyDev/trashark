@@ -12,7 +12,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 	// Variables for player's movement
 	// Default player's speed applied every time player
 	// generate any input signal (like keyboard press)
-	public float playerSpeedDefault = 6.0f;
+	public float playerSpeedDefault = 5.0f;
 	// The current player's speed
 	private float playerSpeedCurrent = 0.0f;
 	// Slow down over time
