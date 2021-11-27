@@ -20,18 +20,12 @@ public abstract class Interactable : MonoBehaviour
     //This should invoke OpenInteractableIcon from the PlayerMovementBehaviour.cs script, which should disable the TickIcon object, yet it does not do that, at all. I couldn't determine why.
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-        {
-            other.GetComponent<PlayerMovementBehaviour>().OpenInteractableIcon();
-        }
+        other.GetComponent<PlayerMovementBehaviour>().OpenInteractableIcon();
     }
 
     //This should invoke CloseInteractableIcon from the PlayerMovementBehaviour.cs script, which should disable the TickIcon object, yet as the previous snippet does not work, we have no idea whether this works.
     private void OnTriggerExit2D(Collider2D other)
     {
-         if(other.CompareTag("Player"))
-         {
-            other.GetComponent<PlayerMovementBehaviour>().CloseInteractableIcon();
-         }
+        other.GetComponent<PlayerMovementBehaviour>().CloseInteractableIcon();
     }
 }

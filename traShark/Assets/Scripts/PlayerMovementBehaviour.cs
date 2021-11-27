@@ -16,7 +16,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 	// The current player's speed
 	private float playerSpeedCurrent = 0.0f;
 	// Slow down over time
-	private float playerDecreaseSpeed = 0.99f;
+	public float playerDecreaseSpeed = 0.99f;
 	// Direction of the last move that we've made
 	private Vector3 playerLastDirection = new Vector3();
 	// Use List to have multiple input sources for every direction possible
