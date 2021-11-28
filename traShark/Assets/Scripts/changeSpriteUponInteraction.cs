@@ -23,7 +23,7 @@ public class changeSpriteUponInteraction : Interactable
         if(isOpen)
             sr.sprite = closed;
         else
-            sr.sprite= open;
+            sr.sprite = open;
 
         isOpen = !isOpen;
     }
