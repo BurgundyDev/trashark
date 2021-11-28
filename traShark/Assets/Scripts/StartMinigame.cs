@@ -36,7 +36,10 @@ public class StartMinigame : Interactable
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.GetComponent<PlayerMovementBehaviour>().OpenInteractableIcon();
+        if(isSaved==false)
+        {
+            other.GetComponent<PlayerMovementBehaviour>().OpenInteractableIcon();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
