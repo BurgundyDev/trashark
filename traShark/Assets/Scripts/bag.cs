@@ -7,11 +7,12 @@ public class bag : MonoBehaviour
 {
     // The plane the object is currently being dragged on
     private Plane dragPlane;
-	private Vector2 boxSize = new Vector2(30f,30f);
+	private Vector2 boxSize = new Vector2(40f,40f);
     // The difference between where the mouse is on the drag plane and 
     // where the origin of the object is on the drag plane
     private Vector3 offset;
     private int rybka;
+    public int followers;
     private Camera myMainCamera; 
 
     void Start()

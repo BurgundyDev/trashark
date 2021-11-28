@@ -1772,6 +1772,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2939030505818742084, guid: 26eda3d87fc096a43a25d43add0fe715, type: 3}
+      propertyPath: m_TagString
+      value: MovementBlockers
+      objectReference: {fileID: 0}
     - target: {fileID: 5139218936360178385, guid: 26eda3d87fc096a43a25d43add0fe715, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1870,6 +1874,10 @@ PrefabInstance:
     - target: {fileID: 5148832033029715541, guid: 2e454a75d8fc57d42be977031bd9ae1c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148832033029715541, guid: 2e454a75d8fc57d42be977031bd9ae1c, type: 3}
+      propertyPath: m_TagString
+      value: MovementBlockers
       objectReference: {fileID: 0}
     - target: {fileID: 7471301613047101872, guid: 2e454a75d8fc57d42be977031bd9ae1c, type: 3}
       propertyPath: m_Enabled
@@ -2295,6 +2303,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5148832033029715541, guid: 2e454a75d8fc57d42be977031bd9ae1c, type: 3}
+      propertyPath: m_TagString
+      value: MovementBlockers
+      objectReference: {fileID: 0}
     - target: {fileID: 7471301613047101872, guid: 2e454a75d8fc57d42be977031bd9ae1c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2393,6 +2405,10 @@ PrefabInstance:
     - target: {fileID: 5148832033029715541, guid: 2e454a75d8fc57d42be977031bd9ae1c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148832033029715541, guid: 2e454a75d8fc57d42be977031bd9ae1c, type: 3}
+      propertyPath: m_TagString
+      value: MovementBlockers
       objectReference: {fileID: 0}
     - target: {fileID: 7471301613047101872, guid: 2e454a75d8fc57d42be977031bd9ae1c, type: 3}
       propertyPath: m_Enabled
@@ -2553,6 +2569,10 @@ PrefabInstance:
     - target: {fileID: 2939030505818742084, guid: 26eda3d87fc096a43a25d43add0fe715, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939030505818742084, guid: 26eda3d87fc096a43a25d43add0fe715, type: 3}
+      propertyPath: m_TagString
+      value: MovementBlockers
       objectReference: {fileID: 0}
     - target: {fileID: 5139218936360178385, guid: 26eda3d87fc096a43a25d43add0fe715, type: 3}
       propertyPath: m_RootOrder
@@ -3088,6 +3108,10 @@ PrefabInstance:
     - target: {fileID: 3355004426736079140, guid: 1a3af488a07c16d44b5cb80188b12641, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355004426736079140, guid: 1a3af488a07c16d44b5cb80188b12641, type: 3}
+      propertyPath: m_TagString
+      value: MovementBlockers
       objectReference: {fileID: 0}
     - target: {fileID: 8701488568144132824, guid: 1a3af488a07c16d44b5cb80188b12641, type: 3}
       propertyPath: player
@@ -3684,6 +3708,10 @@ PrefabInstance:
     - target: {fileID: 3355004426736079140, guid: 1a3af488a07c16d44b5cb80188b12641, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355004426736079140, guid: 1a3af488a07c16d44b5cb80188b12641, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8701488568144132824, guid: 1a3af488a07c16d44b5cb80188b12641, type: 3}
       propertyPath: player
@@ -4908,6 +4936,10 @@ PrefabInstance:
     - target: {fileID: 5513545461813209482, guid: 8c853d4ae54a91942966103861aa69b1, type: 3}
       propertyPath: m_Name
       value: guma1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513545461813209482, guid: 8c853d4ae54a91942966103861aa69b1, type: 3}
+      propertyPath: m_TagString
+      value: MovementBlockers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c853d4ae54a91942966103861aa69b1, type: 3}

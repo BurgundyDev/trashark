@@ -97,8 +97,13 @@ public class PlayerMovementBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMove();
-
+		GameObject[] MovementBlockers;
+		MovementBlockers = GameObject.FindGameObjectsWithTag("MovementBlockers");
+		if(MovementBlockers.Length == 0)
+        {
+			PlayerMove();
+		}
+		
 		if(Input.GetKeyDown(KeyCode.E))
 			CheckInteraction();
     }
