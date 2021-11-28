@@ -2,39 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(PolygonCollider2D))]
 public class lineDraggable : MonoBehaviour
 {
-    private Vector3 screenPoint;
+    // The plane the object is currently being dragged on
+    private Plane dragPlane;
+	private Vector2 boxSize = new Vector2(0.5f,0.5f);
+    // The difference between where the mouse is on the drag plane and 
+    // where the origin of the object is on the drag plane
     private Vector3 offset;
-    private bool isDragging;
-    private void Start()
+    private Camera myMainCamera; 
+
+    void Start()
     {
-        GetComponent<BoxCollider2D>().isTrigger = true;    
-    }
-    public void OnMouseDown()
-    {
-        isDragging = true;
+        myMainCamera = Camera.main; // Camera.main is expensive ; cache it here
+        GetComponent<PolygonCollider2D>().isTrigger = true;
     }
 
-    public void OnMouseUp()
+    private void Update()
     {
-        isDragging = false;
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position,boxSize, 0, Vector2.zero);
+
+		if(hits.Length < 1)
+		{
+			Destroy(gameObject);
+		}
     }
 
-    void Update()
+    void OnMouseDown()
     {
-        if (isDragging) {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            transform.Translate(mousePosition);
-        }
+        dragPlane = new Plane(myMainCamera.transform.forward, transform.position); 
+        Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition); 
+
+        float planeDist;
+        dragPlane.Raycast(camRay, out planeDist); 
+        offset = transform.position - camRay.GetPoint(planeDist);
     }
+
+    void OnMouseDrag()
+    {   
+        Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition); 
+
+        float planeDist;
+        dragPlane.Raycast(camRay, out planeDist);
+        transform.position = camRay.GetPoint(planeDist) + offset;
+    }
+
     public void Destruction()
     {
         Destroy(gameObject);
     }
-    private void OnTriggerExit2D(Collider2D other)
-    {
+    private void OnBecameInvisible() {
         Destroy(gameObject);
     }
 }
