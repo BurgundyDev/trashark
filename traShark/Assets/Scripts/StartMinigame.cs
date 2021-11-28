@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartMinigame : Interactable
 {
+    public GameObject scoreCounter;
     //minigame related to object of this class
     public GameObject minigame;
     //state of the object after being finished with its respective minigame
@@ -49,6 +50,7 @@ public class StartMinigame : Interactable
 
     public void Saving()
     {
+        scoreCounter.GetComponent<ScoreCounter>().AddToScore();
         isSaved = true;
     }
 }
