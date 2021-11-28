@@ -20,8 +20,4 @@ public class osmiornicaMinigame : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        other.GetComponent<lineDraggable>().Destruction();
-    }
 }

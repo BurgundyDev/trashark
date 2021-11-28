@@ -7,10 +7,11 @@ public class lineDraggable : MonoBehaviour
 {
     // The plane the object is currently being dragged on
     private Plane dragPlane;
-	private Vector2 boxSize = new Vector2(0.5f,0.5f);
+	private Vector2 boxSize = new Vector2(25f,25f);
     // The difference between where the mouse is on the drag plane and 
     // where the origin of the object is on the drag plane
     private Vector3 offset;
+    private int octopi;
     private Camera myMainCamera; 
 
     void Start()
@@ -23,9 +24,22 @@ public class lineDraggable : MonoBehaviour
     {
         RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position,boxSize, 0, Vector2.zero);
 
-		if(hits.Length < 1)
+		if(hits.Length > 0)
 		{
-			Destroy(gameObject);
+            octopi = 0;
+
+			foreach(RaycastHit2D rc in hits)
+			{
+				if(rc.transform.GetComponent<osmiornicaMinigame>())
+				{
+                    octopi =+ 1;
+				}
+			}
+
+            if(octopi == 0)
+            {
+                Destroy(gameObject);
+            }
 		}
     }
 
@@ -46,13 +60,5 @@ public class lineDraggable : MonoBehaviour
         float planeDist;
         dragPlane.Raycast(camRay, out planeDist);
         transform.position = camRay.GetPoint(planeDist) + offset;
-    }
-
-    public void Destruction()
-    {
-        Destroy(gameObject);
-    }
-    private void OnBecameInvisible() {
-        Destroy(gameObject);
     }
 }
