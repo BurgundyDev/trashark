@@ -3226,6 +3226,10 @@ MonoBehaviour:
   buttonDown: 7300000012010000
   buttonLeft: 6100000014010000
   buttonRight: 6400000013010000
+  legs:
+  - {fileID: 21300000, guid: 635802346acc1df499a10a9392a75bf1, type: 3}
+  - {fileID: 21300000, guid: 2bcc61cc858461041978aac734ac8579, type: 3}
+  - {fileID: 21300000, guid: 920103c11a3455d479c34dffa0e61caa, type: 3}
 --- !u!61 &888465976
 BoxCollider2D:
   m_ObjectHideFlags: 0

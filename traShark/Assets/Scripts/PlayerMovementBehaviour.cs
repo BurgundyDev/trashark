@@ -24,6 +24,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 	public List<KeyCode> buttonDown;
 	public List<KeyCode> buttonLeft;
 	public List<KeyCode> buttonRight;
+	private SpriteRenderer spriteRenderer;
     	// Move the player according to assigned buttons
 	void PlayerMove()
 	{
@@ -92,6 +93,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
     void Start()
     {
 		interactIcon.SetActive(false);
+		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -106,5 +108,14 @@ public class PlayerMovementBehaviour : MonoBehaviour
 		
 		if(Input.GetKeyDown(KeyCode.E))
 			CheckInteraction();
+
+		if (playerLastDirection.x < 0)
+    	{
+    		spriteRenderer.flipX = false;
+		}
+    	else if (playerLastDirection.x > 0)
+    	{
+        	spriteRenderer.flipX = true;
+    	}   
     }
 }
