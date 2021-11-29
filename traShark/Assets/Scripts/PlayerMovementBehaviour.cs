@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //This is a general script for controlling Player movement and interaction.
 
@@ -132,6 +133,6 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
 	public void PlayerDeath()
 	{
-		Destroy(gameObject);
+		SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 	}
 }

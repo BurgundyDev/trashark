@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BasicEnemy : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class BasicEnemy : MonoBehaviour
 
         public void Death()
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("GoodEnd", LoadSceneMode.Single);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
