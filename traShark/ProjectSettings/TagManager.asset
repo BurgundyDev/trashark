@@ -9,6 +9,7 @@ TagManager:
   - Counter
   - Fish
   - Trigger
+  - ShowOnPause
   layers:
   - Default
   - TransparentFX
