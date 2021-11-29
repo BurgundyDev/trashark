@@ -5,10 +5,13 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    GameObject[] fish;
+    public GameObject trashark;
     public float timeLeft;
     private void Start()
     {
-        timeLeft = 120.0f;
+        timeLeft = 10.0f;
+        fish = GameObject.FindGameObjectsWithTag("Fish");
     }
 
     public void AddToTime()
@@ -18,8 +21,19 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        timeLeft -= Time.deltaTime;
-        TextMeshProUGUI scoreText = GetComponent<TextMeshProUGUI>();
-        scoreText.text = timeLeft.ToString("0");
+        if(timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            TextMeshProUGUI scoreText = GetComponent<TextMeshProUGUI>();
+            scoreText.text = timeLeft.ToString("0");
+        }
+        else
+        {
+            trashark.SetActive(true);
+            foreach(GameObject element in fish)
+            {
+                element.SetActive(false);
+            }
+        }
     }
 }

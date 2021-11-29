@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - MovementBlockers
+  - Enemy
+  - Counter
+  - Fish
+  - Trigger
   layers:
   - Default
   - TransparentFX

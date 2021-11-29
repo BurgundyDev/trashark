@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerMovementBehaviour : MonoBehaviour
 {
 	public GameObject interactIcon;
+	public int health = 25;
 
 	private Vector2 boxSize = new Vector2(1f,1f);
 	// Variables for player's movement
@@ -118,4 +119,19 @@ public class PlayerMovementBehaviour : MonoBehaviour
         	spriteRenderer.flipX = true;
     	}   
     }
+
+	public void PlayerDamage(int damage)
+	{
+        health -= damage;
+
+        if(health <= 0)
+        {
+            PlayerDeath();
+        }		
+	}
+
+	public void PlayerDeath()
+	{
+		Destroy(gameObject);
+	}
 }
