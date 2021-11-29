@@ -9,6 +9,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 {
 	public GameObject interactIcon;
 	public int health = 6;
+	public PlayerHealthChecker healthBar;
 
 	private Vector2 boxSize = new Vector2(1f,1f);
 	// Variables for player's movement
@@ -118,7 +119,9 @@ public class PlayerMovementBehaviour : MonoBehaviour
     	else if (playerLastDirection.x > 0)
     	{
         	spriteRenderer.flipX = true;
-    	}   
+    	}
+
+		healthBar.SetHealth(health);   
     }
 
 	public void PlayerDamage(int damage)

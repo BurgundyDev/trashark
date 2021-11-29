@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     GameObject[] fish;
     public GameObject trashark;
+    public GameObject trasharkHealth;
     public float timeLeft;
     private void Start()
     {
@@ -30,6 +31,7 @@ public class Timer : MonoBehaviour
         else
         {
             trashark.SetActive(true);
+            trasharkHealth.SetActive(true);
             foreach(GameObject element in fish)
             {
                 element.SetActive(false);

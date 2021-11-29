@@ -11,6 +11,7 @@ public class BasicEnemy : MonoBehaviour
         public float attack1Range = 1f;
         public int attack1Damage = 1;
         public float timeBetweenAttacks;
+        public PlayerHealthChecker healthBar;
           // Use this for initialization
         public void TakeDamage (int damage)
         {
@@ -29,7 +30,7 @@ public class BasicEnemy : MonoBehaviour
         // Update is called once per frame
         void Update ()
         {
-            
+            healthBar.SetHealth(health);
         }
          public void MoveToPlayer ()
         {
