@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovementBehaviour : MonoBehaviour
 {
 	public GameObject interactIcon;
-	public int health = 25;
+	public int health = 6;
 
 	private Vector2 boxSize = new Vector2(1f,1f);
 	// Variables for player's movement

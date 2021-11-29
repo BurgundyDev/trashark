@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BasicEnemy : MonoBehaviour
 {
         public Transform target;
-        public int health = 100;
+        public int health = 200;
         public float speed = 3f;
         public float attack1Range = 1f;
         public int attack1Damage = 1;
