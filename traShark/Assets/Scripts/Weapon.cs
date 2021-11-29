@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class Weapon : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            audioSource.Play();
             Shoot();
         }
     }
