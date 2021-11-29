@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     public GameObject trashark;
     public GameObject trasharkHealth;
     public float timeLeft;
+    public GameObject tutorial;
     private void Start()
     {
         timeLeft = 120.0f;
@@ -36,6 +37,11 @@ public class Timer : MonoBehaviour
             {
                 element.SetActive(false);
             }
+        }
+    
+        if(timeLeft < 110.0f)
+        {
+            Destroy(tutorial);
         }
     }
 }
