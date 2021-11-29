@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManagerScript : MonoBehaviour
 {
 public GameObject[] pauseObjects;
+public GameObject[] stoppedUI;
 
 	// Use this for initialization
 	void Start () {
@@ -47,12 +48,20 @@ public GameObject[] pauseObjects;
 		foreach(GameObject g in pauseObjects){
 			g.SetActive(true);
 		}
+		foreach(GameObject u in stoppedUI)
+		{
+			u.SetActive(false);
+		}
 	}
 
 	//hides objects with ShowOnPause tag
 	public void hidePaused(){
 		foreach(GameObject g in pauseObjects){
 			g.SetActive(false);
+		}
+		foreach(GameObject u in stoppedUI)
+		{
+			u.SetActive(true);
 		}
 	}
 }
