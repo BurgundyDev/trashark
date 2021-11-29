@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     public float timeLeft;
     private void Start()
     {
-        timeLeft = 10.0f;
+        timeLeft = 120.0f;
         fish = GameObject.FindGameObjectsWithTag("Fish");
     }
 
